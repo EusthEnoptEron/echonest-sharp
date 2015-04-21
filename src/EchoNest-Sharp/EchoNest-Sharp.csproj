@@ -157,6 +157,7 @@
     <Compile Include="Song\SongBucketExtensions.cs" />
     <Compile Include="Song\SongBucketItem.cs" />
     <Compile Include="Song\TracksItem.cs" />
+    <Compile Include="ThrottledHttpClient.cs" />
     <Compile Include="UriQuery.cs" />
   </ItemGroup>
   <ItemGroup>

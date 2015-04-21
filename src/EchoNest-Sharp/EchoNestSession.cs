@@ -19,7 +19,7 @@ namespace EchoNest
         public EchoNestSession(string apiKey)
         {
             _apiKey = apiKey;
-            _httpClient = new HttpClient { BaseAddress = new Uri(BaseUrl) };
+            _httpClient = new ThrottledHttpClient(20) { BaseAddress = new Uri(BaseUrl) };
             _httpClient.MaxResponseContentBufferSize = int.MaxValue;
         }
 
