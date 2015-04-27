@@ -7,7 +7,6 @@ using System.Linq;
 
 namespace EchoNest
 {
-
     public abstract class EchoNestService
     {
         #region Properties
@@ -38,7 +37,6 @@ namespace EchoNest
         {
             url = string.Format(url, arguments);
             HttpResponseMessage response = HttpClient.GetAsync(url).Result;
-            response.Headers.GetValues("X-Ratelimit-Remaining");
             return GetObject<T>(response);
         }
 

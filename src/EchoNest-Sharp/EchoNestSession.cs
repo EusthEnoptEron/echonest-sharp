@@ -11,15 +11,17 @@ namespace EchoNest
         private readonly string _apiKey;
 
         private HttpClient _httpClient;
+        private EchoNestHttpHandler _httpHandler;
 
         #endregion Fields
 
         #region Constructors
 
-        public EchoNestSession(string apiKey)
+        public EchoNestSession(string apiKey, bool balanced = false)
         {
             _apiKey = apiKey;
-            _httpClient = new ThrottledHttpClient(20) { BaseAddress = new Uri(BaseUrl) };
+            _httpHandler = new EchoNestHttpHandler(20) { Balanced = balanced };
+            _httpClient = new HttpClient(_httpHandler) { BaseAddress = new Uri(BaseUrl) };
             _httpClient.MaxResponseContentBufferSize = int.MaxValue;
         }
 
