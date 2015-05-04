@@ -32,6 +32,6 @@ namespace EchoNest.Song
         [DataMember(Name = "instrumentalness")]
         public double? Instrumentalness { get; set; }
         [DataMember(Name = "valence")]
-        public double Valence { get; set; }
+        public double? Valence { get; set; }
     }
 }
