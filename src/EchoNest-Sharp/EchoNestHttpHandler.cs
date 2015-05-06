@@ -106,7 +106,7 @@ namespace EchoNest
             _lastRequest = DateTime.Now;
 
             IEnumerable<string> values;
-            if (response.Headers.TryGetValues("X-Ratelimit", out values))
+            if (response.Headers.TryGetValues("X-Ratelimit-Limit", out values))
             {
                 _ratelimit = int.Parse(values.First());
             }
