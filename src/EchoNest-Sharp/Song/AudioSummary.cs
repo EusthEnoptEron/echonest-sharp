@@ -24,9 +24,9 @@ namespace EchoNest.Song
         [DataMember(Name = "analysis_url")]
         public string AnalysisUrl { get; set; }
         [DataMember(Name = "danceability")]
-        public double Danceability { get; set; }
+        public double? Danceability { get; set; }
         [DataMember(Name = "liveness")]
-        public double Liveness { get; set; }
+        public double? Liveness { get; set; }
         [DataMember(Name = "speechiness")]
         public double? Speechiness { get; set; }
         [DataMember(Name = "instrumentalness")]
